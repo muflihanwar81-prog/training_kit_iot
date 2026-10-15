@@ -1,0 +1,37 @@
+/* Halaman Materi - IoT Kids
+   Pakai variabel warna yang sama dengan beranda. Kalau style.css sudah
+   punya :root dengan warna ini, blok :root di bawah boleh dihapus. */
+:root{
+  --blue:#316BFF; --blue-soft:#8FB1FF; --orange:#FFBD61; --red:#FF777D;
+  --navy:#29285F; --bg:#F4F7FF; --line:#DDE4FA;
+}
+
+.materi-banner{background:var(--blue);color:#fff;height:274px}
+.materi-banner .container{height:100%;display:flex;align-items:center;justify-content:space-between}
+.materi-banner h1{font-family:'Fredoka',sans-serif;font-weight:900;font-size:88px;line-height:1;margin-bottom:12px}
+.materi-pill{display:inline-block;background:#fff;color:var(--navy);font-family:'Fredoka',sans-serif;font-weight:800;font-size:17px;padding:5px 20px;border-radius:999px}
+.materi-banner .mascot{width:150px;height:auto}
+
+.materi-main{background:var(--bg);padding:56px 0 80px}
+.materi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+
+.materi-card{display:block;background:#fff;border:2px solid var(--line);border-radius:28px;padding:20px 20px 18px;color:var(--navy);text-decoration:none;transition:transform .15s,box-shadow .15s}
+.materi-card:hover{transform:translateY(-4px);box-shadow:0 8px 0 var(--line)}
+.materi-card:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.materi-thumb{height:180px;border-radius:20px;display:grid;place-items:center}
+.materi-thumb .circle{width:132px;height:132px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.materi-thumb svg{width:96px;height:96px;overflow:visible}
+.materi-card h2{font-family:'Fredoka',sans-serif;font-weight:900;font-size:28px;line-height:1.1;margin:18px 6px 4px}
+.c-blue{background:var(--blue-soft)} .c-orange{background:var(--orange)} .c-red{background:var(--red)}
+
+@media (max-width:900px){
+  .materi-grid{grid-template-columns:repeat(2,1fr)}
+  .materi-banner h1{font-size:64px}
+}
+@media (max-width:600px){
+  .materi-grid{grid-template-columns:1fr}
+  .materi-banner{height:auto;padding:36px 0}
+  .materi-banner .mascot{width:90px}
+  .materi-banner h1{font-size:52px}
+}
+@media (prefers-reduced-motion:reduce){.materi-card{transition:none}}
