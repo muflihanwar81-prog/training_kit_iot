@@ -1,0 +1,148 @@
+/**
+ * IoT Kids - Animation Library
+ * File: public/css/animations.css
+ */
+
+/* Antena WiFi / Radar Pulse di Kepala Robot */
+@keyframes arc-pulse {
+    0%, 100% {
+        opacity: 0.85;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+.animate-arc-inner {
+    animation: arc-pulse 2s infinite ease-in-out;
+    transform-origin: center bottom;
+}
+.animate-arc-outer {
+    animation: arc-pulse 2s infinite ease-in-out 0.3s;
+    transform-origin: center bottom;
+}
+
+/* Kedipan Mata Robot Lucu */
+@keyframes robot-blink {
+    0%, 90%, 100% {
+        transform: scaleY(1);
+    }
+    95% {
+        transform: scaleY(0.12);
+    }
+}
+.robot-eyes {
+    animation: robot-blink 3.6s infinite ease-in-out;
+    transform-origin: center;
+}
+
+/* Efek Melayang Halus (Float) */
+@keyframes float-y {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+.animate-float {
+    animation: float-y 3.5s ease-in-out infinite;
+}
+
+/* Efek Melayang Lawan Arah */
+@keyframes float-y-alt {
+    0%, 100% {
+        transform: translateY(-5px);
+    }
+    50% {
+        transform: translateY(4px);
+    }
+}
+.animate-float-alt {
+    animation: float-y-alt 4s ease-in-out infinite;
+}
+
+/* Rotasi & Kilau Bintang */
+@keyframes sparkle-spin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.15);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+.animate-sparkle {
+    animation: sparkle-spin 4.5s ease-in-out infinite;
+    transform-origin: center;
+}
+
+/* Kursor Terminal Berkedip */
+@keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+.terminal-cursor {
+    animation: cursor-blink 1s step-end infinite;
+}
+
+/* Gelombang Radar Suara Speaker */
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+.animate-pulse-ring {
+    animation: pulse-ring 1.8s ease-out infinite;
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #63E3B5;
+}
+
+/* Goyangan Ceria Robot (Wiggle) */
+@keyframes gentle-wobble {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-3deg); }
+    75% { transform: rotate(3deg); }
+}
+.animate-wobble {
+    animation: gentle-wobble 2.5s ease-in-out infinite;
+    transform-origin: center bottom;
+}
+
+/* Pantulan Tombol & Efek Interaktif */
+.btn-hover-lift {
+    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease;
+}
+.btn-hover-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(41, 40, 95, 0.15);
+}
+.btn-hover-lift:active {
+    transform: scale(0.96);
+}
+
+/* Kartu Interaktif */
+.card-hover-lift {
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease, border-color 0.25s ease;
+}
+.card-hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 30px rgba(41, 40, 95, 0.1);
+}
+
+.play-hover-scale {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.card-hover-lift:hover .play-hover-scale {
+    transform: scale(1.15);
+}
