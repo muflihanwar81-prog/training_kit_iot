@@ -35,9 +35,10 @@
             <a href="{{ route('beranda') }}"
                 class="{{ request()->routeIs('beranda') ? 'nav-pill-active' : 'nav-link-iot' }} text-decoration-none">Beranda</a>
             <a href="{{ route('materi') }}"
-                class="{{ request()->routeIs('materi') ? 'nav-pill-active' : 'nav-link-iot' }} text-decoration-none">Materi</a>
-            <a href="" class="nav-link-iot text-decoration-none">Praktik</a>
-            <a href="" class="nav-link-iot text-decoration-none">Kuis</a>
+                class="{{ request()->routeIs('materi*') ? 'nav-pill-active' : 'nav-link-iot' }} text-decoration-none">Materi</a>
+            <a href="{{ route('praktik') }}"
+                class="{{ request()->routeIs('praktik*') ? 'nav-pill-active' : 'nav-link-iot' }} text-decoration-none">Praktik</a>
+            <a href="javascript:void(0)" onclick="if(typeof showToast==='function'){showToast('Fitur Kuis akan segera hadir! ✨');}" class="nav-link-iot text-decoration-none">Kuis</a>
         </nav>
 
         <!-- Mobile Toggle Button -->
@@ -52,11 +53,13 @@
     <!-- Mobile Navigation Collapse -->
     <div class="collapse d-md-none border-top bg-white px-4 pb-3" id="mobileNav">
         <div class="d-flex flex-column gap-2 pt-3">
-            <a href="beranda" class="nav-pill-active text-decoration-none d-inline-block"
+            <a href="{{ route('beranda') }}" class="{{ request()->routeIs('beranda') ? 'nav-pill-active' : 'nav-link-iot' }} text-decoration-none d-inline-block"
                 style="width:max-content;">Beranda</a>
-            <a href="" class="nav-link-iot text-decoration-none">Materi</a>
-            <a href="" class="nav-link-iot text-decoration-none">Praktik</a>
-            <a href="" class="nav-link-iot text-decoration-none">Kuis</a>
+            <a href="{{ route('materi') }}" class="{{ request()->routeIs('materi*') ? 'nav-pill-active' : 'nav-link-iot' }} text-decoration-none d-inline-block"
+                style="width:max-content;">Materi</a>
+            <a href="{{ route('praktik') }}" class="{{ request()->routeIs('praktik*') ? 'nav-pill-active' : 'nav-link-iot' }} text-decoration-none d-inline-block"
+                style="width:max-content;">Praktik</a>
+            <a href="javascript:void(0)" onclick="if(typeof showToast==='function'){showToast('Fitur Kuis akan segera hadir! ✨');}" class="nav-link-iot text-decoration-none">Kuis</a>
         </div>
     </div>
 </header>

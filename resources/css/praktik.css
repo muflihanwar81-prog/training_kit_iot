@@ -1,0 +1,365 @@
+/**
+ * IoT Kids - Halaman Praktik Stylesheet
+ * File: resources/css/praktik.css
+ */
+
+:root {
+    --pr-bg: #F3F6FF;
+    --pr-navy: #29285F;
+    --pr-hero-blue: #3167F5;
+    --pr-blue: #8DB0FF;
+    --pr-orange: #FFC15F;
+    --pr-coral: #FF777C;
+    --pr-border: #D4DEFF;
+    --ff-playful: 'Fredoka', ui-rounded, 'Comic Sans MS', sans-serif;
+    --ff-body: 'Fredoka', 'Nunito', sans-serif;
+}
+
+body.praktik-page {
+    background-color: var(--pr-bg);
+    color: var(--pr-navy);
+    font-family: var(--ff-body);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ================= 1. NAVBAR ================= */
+.navbar-praktik {
+    background-color: #FFFFFF;
+    border-bottom: 1.5px solid #E2E8F5;
+    height: 47px;
+    min-height: 47px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+
+.navbar-praktik .navbar-inner {
+    width: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-praktik .nav-link-item {
+    font-family: var(--ff-playful);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--pr-navy);
+    text-decoration: none;
+    padding: 4px 8px;
+    transition: color 0.15s ease;
+}
+
+.navbar-praktik .nav-link-item:hover {
+    color: var(--pr-hero-blue);
+}
+
+.navbar-praktik .nav-pill-active {
+    background-color: var(--pr-orange);
+    color: var(--pr-navy) !important;
+    font-family: var(--ff-playful);
+    font-weight: 800;
+    font-size: 15px;
+    padding: 4px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.navbar-praktik .nav-pill-active:hover {
+    background-color: #f7b247;
+    transform: translateY(-1px);
+}
+
+/* ================= 2. HERO SECTION ================= */
+.praktik-hero {
+    background-color: var(--pr-hero-blue);
+    height: 143px;
+    min-height: 143px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    user-select: none;
+}
+
+.praktik-hero-container {
+    width: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.praktik-hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.praktik-hero-title {
+    font-family: var(--ff-playful);
+    font-weight: 800;
+    font-size: 46px;
+    line-height: 1.05;
+    color: #FFFFFF;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.5px;
+}
+
+.praktik-hero-badge {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: var(--pr-navy);
+    font-family: var(--ff-playful);
+    font-weight: 800;
+    font-size: 13.5px;
+    padding: 4px 16px;
+    border-radius: 999px;
+    line-height: 1.2;
+}
+
+.praktik-hero-mascot {
+    width: 75px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.praktik-hero-mascot svg {
+    width: 75px;
+    height: 80px;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
+}
+
+/* ================= 3. AREA DAFTAR MISI ================= */
+.praktik-main {
+    flex: 1 0 auto;
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.praktik-container {
+    width: 84%;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.praktik-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 14px;
+    row-gap: 14px;
+}
+
+/* Mission Card */
+.praktik-card {
+    background-color: #FFFFFF;
+    border: 1.5px solid var(--pr-border);
+    border-radius: 16px;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--pr-navy);
+    display: flex;
+    flex-direction: column;
+    min-height: 148px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+    user-select: none;
+    position: relative;
+}
+
+.praktik-card:hover {
+    transform: translateY(-3px);
+    border-color: #8DB0FF;
+    box-shadow: 0 8px 18px rgba(41, 40, 95, 0.06);
+    color: var(--pr-navy);
+}
+
+/* Thumbnail */
+.praktik-card-thumb {
+    width: 100%;
+    height: 94px;
+    border-radius: 11px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* Color repetitions */
+.thumb-blue   { background-color: var(--pr-blue); }
+.thumb-orange { background-color: var(--pr-orange); }
+.thumb-coral  { background-color: var(--pr-coral); }
+
+/* Mission Badge on Thumbnail */
+.praktik-badge-misi {
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    background-color: #FFFFFF;
+    color: var(--pr-navy);
+    font-family: var(--ff-playful);
+    font-weight: 800;
+    font-size: 11px;
+    line-height: 1;
+    padding: 3.5px 10px;
+    border-radius: 999px;
+    box-shadow: 0 1px 4px rgba(41, 40, 95, 0.08);
+    z-index: 2;
+}
+
+/* Play Button: white circle with navy outline triangle */
+.praktik-play-btn {
+    width: 38px;
+    height: 38px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(41, 40, 95, 0.12);
+    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 2;
+}
+
+.praktik-card:hover .praktik-play-btn {
+    transform: scale(1.12);
+}
+
+.praktik-play-btn svg {
+    margin-left: 2px;
+}
+
+/* Mission Title */
+.praktik-card-title {
+    font-family: var(--ff-playful);
+    font-weight: 800;
+    font-size: 16.5px;
+    line-height: 1.25;
+    color: var(--pr-navy);
+    margin-top: 8px;
+    margin-bottom: 2px;
+    padding-left: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ================= 4. FOOTER ================= */
+.praktik-footer {
+    background-color: var(--pr-navy);
+    height: 45px;
+    min-height: 45px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: auto;
+    user-select: none;
+}
+
+.praktik-footer-inner {
+    width: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.praktik-footer-copy {
+    color: #FFFFFF;
+    font-family: var(--ff-playful);
+    font-weight: 500;
+    font-size: 13px;
+    margin: 0;
+    letter-spacing: 0.1px;
+}
+
+/* ================= 5. RESPONSIVE BREAKPOINTS ================= */
+@media (max-width: 992px) {
+    .praktik-container {
+        width: 90%;
+    }
+    .praktik-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 680px) {
+    .navbar-praktik {
+        height: auto;
+        min-height: 47px;
+        padding: 6px 0;
+    }
+    .praktik-hero {
+        height: auto;
+        min-height: 120px;
+        padding: 20px 0;
+    }
+    .praktik-hero-title {
+        font-size: 36px;
+    }
+    .praktik-hero-mascot {
+        width: 60px;
+        height: 64px;
+    }
+    .praktik-hero-mascot svg {
+        width: 60px;
+        height: 64px;
+    }
+    .praktik-container {
+        width: 92%;
+        margin-top: 20px;
+    }
+    .praktik-grid {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 12px;
+    }
+    .praktik-card {
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    .praktik-footer {
+        height: auto;
+        min-height: 45px;
+        padding: 10px 0;
+    }
+    .praktik-footer-inner {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 680px) {
+    .praktik-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .praktik-card {
+        max-width: none;
+    }
+}

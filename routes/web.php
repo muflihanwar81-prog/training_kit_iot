@@ -13,3 +13,11 @@ Route::get('/', function () {
 Route::get('/materi', function () {
     return view('materi');
 })->name('materi');
+
+Route::get('/praktik', function () {
+    return view('praktik');
+})->name('praktik');
+
+Route::get('/praktik/{id}', function ($id) {
+    return view('praktik-detail', ['id' => $id]);
+})->name('praktik.detail');

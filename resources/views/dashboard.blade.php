@@ -403,8 +403,8 @@
                     style="color: var(--c-navy); font-weight: 900; font-size: 30px; letter-spacing: -0.5px;">
                     Video Praktik
                 </h2>
-                <a href="javascript:void(0)" class="text-decoration-none fw-bold"
-                    style="color: var(--c-navy); font-size: 16px;" onclick="openSemuaVideoModal()">
+                <a href="{{ route('praktik') }}" class="text-decoration-none fw-bold"
+                    style="color: var(--c-navy); font-size: 16px;">
                     Lihat Semua
                 </a>
             </div>
