@@ -39,10 +39,22 @@ body {
     stroke-linejoin: round;
 }
 
-/* ===== NAVBAR ===== */
+/* ===== NAVBAR (FROZEN TOP) ===== */
 .navbar-iot {
     background: #fff;
     border-bottom: 1px solid #e2e8f5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1040;
+    box-shadow: 0 2px 10px rgba(41, 40, 95, 0.05);
+}
+
+body:not(.praktik-page) {
+    padding-top: 56px;
+    padding-bottom: 58px;
 }
 .nav-pill-active {
     background-color: var(--c-orange);
@@ -305,9 +317,16 @@ body {
     letter-spacing: -0.3px;
 }
 
-/* ===== FOOTER ===== */
+/* ===== FOOTER (FROZEN BOTTOM) ===== */
 .footer-iot {
     background-color: #252850;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1040;
+    box-shadow: 0 -2px 12px rgba(41, 40, 95, 0.15);
 }
 .footer-text {
     color: #C5C9D8;
@@ -318,7 +337,7 @@ body {
 /* ===== TOAST NOTIFICATION ===== */
 .toast-iot {
     position: fixed;
-    bottom: 24px;
+    bottom: 64px;
     right: 24px;
     z-index: 1080;
     background: var(--c-navy);
@@ -340,4 +359,14 @@ body {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+}
+
+@media (max-width: 680px) {
+    body:not(.praktik-page) {
+        padding-bottom: 54px;
+    }
+    .footer-iot {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
 }

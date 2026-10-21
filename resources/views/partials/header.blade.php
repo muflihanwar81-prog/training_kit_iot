@@ -1,3 +1,5 @@
+@include('partials.intro-animation')
+
 <!-- ================= NAVBAR / HEADER ================= -->
 <header class="navbar-iot sticky-top" id="headerNavbar">
     <div class="container d-flex align-items-center justify-content-between py-2">

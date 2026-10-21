@@ -27,21 +27,23 @@ body.praktik-page {
     -webkit-font-smoothing: antialiased;
 }
 
-/* ================= 1. NAVBAR ================= */
+/* ================= 1. NAVBAR (FROZEN TOP) ================= */
 .navbar-praktik {
     background-color: #FFFFFF;
     border-bottom: 1.5px solid #E2E8F5;
-    height: 47px;
-    min-height: 47px;
-    display: flex;
-    align-items: center;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 1020;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1040;
+    box-shadow: 0 2px 10px rgba(41, 40, 95, 0.06);
 }
 
 .navbar-praktik .navbar-inner {
     width: 100%;
+    height: 48px;
+    min-height: 48px;
     padding-left: 8%;
     padding-right: 8%;
     display: flex;
@@ -92,6 +94,7 @@ body.praktik-page {
     display: flex;
     align-items: center;
     user-select: none;
+    margin-top: 48px; /* Kompensasi navbar fixed */
 }
 
 .praktik-hero-container {
@@ -150,56 +153,56 @@ body.praktik-page {
 .praktik-main {
     flex: 1 0 auto;
     width: 100%;
-    padding-bottom: 50px;
+    padding-bottom: 60px;
 }
 
 .praktik-container {
-    width: 84%;
-    max-width: 1080px;
+    width: 90%;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
+    margin-top: 36px;
 }
 
 .praktik-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 14px;
-    row-gap: 14px;
+    gap: 26px;
 }
 
 /* Mission Card */
 .praktik-card {
     background-color: #FFFFFF;
-    border: 1.5px solid var(--pr-border);
-    border-radius: 16px;
-    padding: 10px;
+    border: 2px solid var(--pr-border);
+    border-radius: 24px;
+    padding: 16px;
     text-decoration: none;
     color: var(--pr-navy);
     display: flex;
     flex-direction: column;
-    min-height: 148px;
+    min-height: 270px;
     box-sizing: border-box;
     cursor: pointer;
-    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
-                border-color 0.2s ease,
-                box-shadow 0.2s ease;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+                border-color 0.22s ease,
+                box-shadow 0.22s ease;
     user-select: none;
     position: relative;
+    box-shadow: 0 6px 18px rgba(41, 40, 95, 0.05);
 }
 
 .praktik-card:hover {
-    transform: translateY(-3px);
+    transform: translateY(-6px);
     border-color: #8DB0FF;
-    box-shadow: 0 8px 18px rgba(41, 40, 95, 0.06);
+    box-shadow: 0 16px 32px rgba(41, 40, 95, 0.12);
     color: var(--pr-navy);
 }
 
 /* Thumbnail */
 .praktik-card-thumb {
     width: 100%;
-    height: 94px;
-    border-radius: 11px;
+    height: 165px;
+    border-radius: 18px;
     position: relative;
     display: flex;
     align-items: center;
@@ -216,58 +219,113 @@ body.praktik-page {
 /* Mission Badge on Thumbnail */
 .praktik-badge-misi {
     position: absolute;
-    top: 7px;
-    left: 8px;
+    top: 12px;
+    left: 12px;
     background-color: #FFFFFF;
     color: var(--pr-navy);
     font-family: var(--ff-playful);
     font-weight: 800;
-    font-size: 11px;
+    font-size: 13px;
     line-height: 1;
-    padding: 3.5px 10px;
+    padding: 6px 14px;
     border-radius: 999px;
-    box-shadow: 0 1px 4px rgba(41, 40, 95, 0.08);
+    box-shadow: 0 2px 8px rgba(41, 40, 95, 0.1);
     z-index: 2;
 }
 
 /* Play Button: white circle with navy outline triangle */
 .praktik-play-btn {
-    width: 38px;
-    height: 38px;
+    width: 56px;
+    height: 56px;
     background-color: #FFFFFF;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(41, 40, 95, 0.12);
-    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 14px rgba(41, 40, 95, 0.16);
+    transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease;
     z-index: 2;
 }
 
 .praktik-card:hover .praktik-play-btn {
-    transform: scale(1.12);
+    transform: scale(1.14);
+    box-shadow: 0 6px 20px rgba(41, 40, 95, 0.22);
 }
 
 .praktik-play-btn svg {
-    margin-left: 2px;
+    margin-left: 3px;
 }
 
 /* Mission Title */
 .praktik-card-title {
     font-family: var(--ff-playful);
     font-weight: 800;
-    font-size: 16.5px;
+    font-size: 21px;
     line-height: 1.25;
     color: var(--pr-navy);
-    margin-top: 8px;
-    margin-bottom: 2px;
+    margin-top: 14px;
+    margin-bottom: 6px;
     padding-left: 2px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
-/* ================= 4. FOOTER ================= */
+/* Mission Short Desc */
+.praktik-card-desc {
+    font-family: var(--ff-body);
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: #5C6784;
+    margin: 0 0 12px 0;
+    padding-left: 2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Card Action Footer */
+.praktik-card-footer {
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1.5px dashed #E2E8F5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.praktik-btn-buka {
+    font-family: var(--ff-playful);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--pr-hero-blue);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.15s ease;
+}
+
+.praktik-card:hover .praktik-btn-buka {
+    color: #1e4ec9;
+}
+
+.praktik-card-arrow {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #F0F4FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pr-hero-blue);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.praktik-card:hover .praktik-card-arrow {
+    background-color: var(--pr-hero-blue);
+    color: #FFFFFF;
+    transform: translateX(3px);
+}
+
+/* ================= 4. FOOTER (FROZEN BOTTOM) ================= */
 .praktik-footer {
     background-color: var(--pr-navy);
     height: 45px;
@@ -275,7 +333,12 @@ body.praktik-page {
     width: 100%;
     display: flex;
     align-items: center;
-    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1040;
+    box-shadow: 0 -2px 12px rgba(41, 40, 95, 0.15);
     user-select: none;
 }
 
@@ -297,26 +360,33 @@ body.praktik-page {
     letter-spacing: 0.1px;
 }
 
+/* Toast di atas footer yang freeze */
+.praktik-page .toast-iot {
+    bottom: 58px !important;
+}
+
 /* ================= 5. RESPONSIVE BREAKPOINTS ================= */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
     .praktik-container {
-        width: 90%;
+        width: 92%;
     }
     .praktik-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
 @media (max-width: 680px) {
-    .navbar-praktik {
-        height: auto;
-        min-height: 47px;
-        padding: 6px 0;
+    .navbar-praktik .navbar-inner {
+        padding-left: 5%;
+        padding-right: 5%;
+        height: 48px;
     }
     .praktik-hero {
         height: auto;
         min-height: 120px;
         padding: 20px 0;
+        margin-top: 48px;
     }
     .praktik-hero-title {
         font-size: 36px;
@@ -331,35 +401,38 @@ body.praktik-page {
     }
     .praktik-container {
         width: 92%;
-        margin-top: 20px;
+        margin-top: 22px;
     }
     .praktik-grid {
-        grid-template-columns: repeat(1, 1fr);
-        row-gap: 12px;
+        grid-template-columns: 1fr;
+        gap: 18px;
     }
     .praktik-card {
-        max-width: 380px;
+        max-width: 440px;
         margin-left: auto;
         margin-right: auto;
         width: 100%;
+        min-height: auto;
+    }
+    .praktik-card-thumb {
+        height: 155px;
+    }
+    .praktik-main {
+        padding-bottom: 72px;
     }
     .praktik-footer {
-        height: auto;
-        min-height: 45px;
-        padding: 10px 0;
+        height: 42px;
+        min-height: 42px;
+        padding: 0;
     }
     .praktik-footer-inner {
-        flex-direction: column;
-        gap: 6px;
-        text-align: center;
+        padding-left: 5%;
+        padding-right: 5%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
-}
-
-@media (min-width: 480px) and (max-width: 680px) {
-    .praktik-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .praktik-card {
-        max-width: none;
+    .praktik-footer-copy {
+        font-size: 11px;
     }
 }

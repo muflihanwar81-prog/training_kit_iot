@@ -28,6 +28,8 @@
 
 <body class="praktik-page d-flex flex-column min-vh-100" id="praktik-page">
 
+    @include('partials.intro-animation')
+
     <!-- ================= 1. NAVBAR ================= -->
     <header class="navbar-praktik">
         <div class="navbar-inner">
@@ -75,17 +77,17 @@
                 </svg>
             </button>
         </div>
-    </header>
 
-    <!-- Mobile Navigation Menu -->
-    <div class="collapse d-md-none border-top bg-white px-4 pb-3" id="mobileNavPraktik">
-        <div class="d-flex flex-column gap-2 pt-3">
-            <a href="{{ route('beranda') }}" class="nav-link-item">Beranda</a>
-            <a href="{{ route('materi') }}" class="nav-link-item">Materi</a>
-            <a href="{{ route('praktik') }}" class="nav-pill-active d-inline-block" style="width:max-content;">Praktik</a>
-            <a href="javascript:void(0)" onclick="showToast('Fitur Kuis akan segera hadir! ✨')" class="nav-link-item">Kuis</a>
+        <!-- Mobile Navigation Menu -->
+        <div class="collapse d-md-none border-top bg-white px-4 pb-3" id="mobileNavPraktik">
+            <div class="d-flex flex-column gap-2 pt-3">
+                <a href="{{ route('beranda') }}" class="nav-link-item">Beranda</a>
+                <a href="{{ route('materi') }}" class="nav-link-item">Materi</a>
+                <a href="{{ route('praktik') }}" class="nav-pill-active d-inline-block" style="width:max-content;">Praktik</a>
+                <a href="javascript:void(0)" onclick="showToast('Fitur Kuis akan segera hadir! ✨')" class="nav-link-item">Kuis</a>
+            </div>
         </div>
-    </div>
+    </header>
 
     <!-- ================= 2. HERO SECTION ================= -->
     <section class="praktik-hero">
@@ -117,7 +119,7 @@
         [
             'id' => 1,
             'badge' => 'Misi 1',
-            'title' => 'Buzzer Bungi',
+            'title' => 'Buzzer Bunyi',
             'color' => 'thumb-blue',
             'desc' => 'Belajar memprogram suara buzzer pertama dan menghubungkannya dengan mikrokontroler IoT!'
         ],
@@ -191,7 +193,7 @@
                         <span class="praktik-badge-misi">{{ $misi['badge'] }}</span>
                         <div class="praktik-play-btn" title="Mulai {{ $misi['title'] }}">
                             <!-- Ikon Play: Segitiga Outline Navy -->
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#29285F"
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#29285F"
                                 stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <polygon points="6 3 20 12 6 21 6 3"></polygon>
                             </svg>
@@ -199,6 +201,18 @@
                     </div>
                     <!-- Judul Misi -->
                     <div class="praktik-card-title">{{ $misi['title'] }}</div>
+                    <!-- Deskripsi Singkat Misi -->
+                    <div class="praktik-card-desc">{{ $misi['desc'] }}</div>
+                    <!-- Action Footer -->
+                    <div class="praktik-card-footer">
+                        <span class="praktik-btn-buka">Mulai Misi 🚀</span>
+                        <div class="praktik-card-arrow" aria-hidden="true">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
                 @endforeach
             </div>
