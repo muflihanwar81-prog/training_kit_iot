@@ -5,9 +5,9 @@
     <div class="container d-flex align-items-center justify-content-between py-2">
 
         <!-- Left: Logo IoT Kids -->
-        <a href="beranda" class="d-flex align-items-center gap-2 text-decoration-none" title="IoT Kids">
+        <a href="{{ route('beranda') }}" class="d-flex align-items-center gap-2 text-decoration-none" title="IoT Kids">
             <!-- Mascot Robot Icon -->
-            <svg width="40" height="36" viewBox="0 0 90 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="header-logo-icon" width="40" height="36" viewBox="0 0 90 82" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path class="animate-arc-outer" d="M 22 10 A 26 26 0 0 1 68 10" stroke="#FFBD61" stroke-width="7"
                     stroke-linecap="round" />
                 <path class="animate-arc-inner" d="M 31 18 A 15 15 0 0 1 59 18" stroke="#FFBD61" stroke-width="7"
@@ -26,7 +26,7 @@
             </svg>
 
             <!-- Text IoT Kids with Cartoon Sticker Stroke -->
-            <svg width="124" height="38" viewBox="0 0 135 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="header-logo-text" width="124" height="38" viewBox="0 0 135 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <text x="2" y="32" class="svg-sticker-text" fill="#FFBD61" font-size="34">IoT</text>
                 <text x="60" y="32" class="svg-sticker-text" fill="#52a9f8" font-size="34">Kids</text>
             </svg>

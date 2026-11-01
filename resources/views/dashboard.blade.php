@@ -48,7 +48,7 @@
                     </div>
 
                     <!-- CTA Buttons -->
-                    <div class="d-flex flex-wrap align-items-center gap-3">
+                    <div class="d-flex flex-wrap align-items-center gap-3 hero-cta-buttons">
                         <a href="{{ route('materi') }}" class="btn-hero-orange">
                             Ayo Mulai!
                         </a>
@@ -73,7 +73,7 @@
 
                 <!-- RIGHT COLUMN: Computer Monitor & Robot Mascot Illustration -->
                 <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end">
-                    <div class="position-relative" style="width: 100%; max-width: 540px; height: 380px;">
+                    <div class="hero-illustration-wrapper">
 
                         <!-- Peach/Orange Circular Disk in Background -->
                         <div class="position-absolute rounded-circle"

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @php
     $misiData = [
-        1 => ['title' => 'Buzzer Bungi', 'color' => '#8DB0FF', 'badge' => 'Misi 1', 'component' => 'Modul Buzzer Pasif/Aktif', 'desc' => 'Belajar memprogram suara buzzer pertama dan menghubungkannya dengan mikrokontroler IoT!'],
+        1 => ['title' => 'Buzzer Bunyi', 'color' => '#8DB0FF', 'badge' => 'Misi 1', 'component' => 'Modul Buzzer Pasif/Aktif', 'desc' => 'Belajar memprogram suara buzzer pertama dan menghubungkannya dengan mikrokontroler IoT!'],
         2 => ['title' => 'Tombol dan Buzzer', 'color' => '#FFC15F', 'badge' => 'Misi 2', 'component' => 'Push Button & Buzzer', 'desc' => 'Membuat sakelar bel pintar yang berbunyi ketika tombol ditekan.'],
         3 => ['title' => 'Kontrol Relay', 'color' => '#FF777C', 'badge' => 'Misi 3', 'component' => 'Modul Relay 1 Channel', 'desc' => 'Mengendalikan modul sakelar relay otomatis untuk menyalakan perangkat elektronik.'],
         4 => ['title' => 'Deteksi Gerak', 'color' => '#8DB0FF', 'badge' => 'Misi 4', 'component' => 'Sensor Gerak PIR', 'desc' => 'Mendeteksi langkah atau gerakan di sekitar sensor PIR untuk sistem alarm pengaman!'],
@@ -41,11 +41,26 @@
     <link rel="stylesheet" href="{{ asset('css/praktik.css') }}">
 
     <style>
+        #praktik-detail-page {
+            padding-top: 56px;
+            padding-bottom: 58px;
+        }
         .detail-card {
             background: #fff;
             border: 1.5px solid #D4DEFF;
             border-radius: 20px;
             padding: 24px;
+            box-shadow: 0 4px 16px rgba(41, 40, 95, 0.04);
+        }
+        .detail-preview-card {
+            height: 210px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+        }
+        .detail-misi-title {
+            font-size: 34px;
         }
         .step-pill {
             width: 32px;
@@ -59,6 +74,50 @@
             justify-content: center;
             font-family: 'Fredoka', sans-serif;
             flex-shrink: 0;
+        }
+
+        @media (min-width: 577px) and (max-width: 991px) {
+            .detail-misi-title {
+                font-size: 28px;
+            }
+            .detail-preview-card {
+                height: 185px;
+            }
+            .detail-card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            #praktik-detail-page {
+                padding-top: 52px;
+                padding-bottom: 52px;
+            }
+            .detail-misi-title {
+                font-size: 24px;
+            }
+            .detail-preview-card {
+                height: 155px;
+            }
+            .detail-card {
+                padding: 16px 14px;
+                border-radius: 16px;
+            }
+            .detail-nav-actions {
+                flex-direction: column-reverse;
+                gap: 10px !important;
+            }
+            .detail-nav-actions .btn {
+                width: 100%;
+                text-align: center;
+                padding: 10px 16px !important;
+                font-size: 14.5px !important;
+            }
+            .step-pill {
+                width: 28px;
+                height: 28px;
+                font-size: 13px;
+            }
         }
     </style>
 </head>
@@ -91,13 +150,13 @@
                 </span>
                 <span class="text-muted fw-bold" style="font-size: 14px;">Praktik IoT Kids</span>
             </div>
-            <h1 class="fw-bolder mb-3" style="color: var(--pr-navy); font-family: 'Fredoka', sans-serif; font-size: 34px;">
+            <h1 class="fw-bolder mb-3 detail-misi-title" style="color: var(--pr-navy); font-family: 'Fredoka', sans-serif;">
                 {{ $currentMisi['title'] }}
             </h1>
 
             <!-- Media / Preview Card -->
-            <div class="detail-card mb-4 text-center text-white"
-                style="background: {{ $currentMisi['color'] }}; height: 210px; display: flex; align-items: center; justify-content: center; border: none;">
+            <div class="detail-card mb-4 text-center text-white detail-preview-card"
+                style="background: {{ $currentMisi['color'] }};">
                 <div class="bg-white rounded-circle p-3 shadow-sm d-flex align-items-center justify-content-center"
                     style="width: 76px; height: 76px;">
                     <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#29285F" stroke-width="2.6"
@@ -154,7 +213,7 @@
             </div>
 
             <!-- Tombol Navigasi Antar Misi -->
-            <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center detail-nav-actions">
                 @if($currentId > 1)
                 <a href="{{ route('praktik.detail', ['id' => $currentId - 1]) }}"
                     class="btn btn-white border fw-bold px-4 py-2 rounded-3 text-decoration-none"

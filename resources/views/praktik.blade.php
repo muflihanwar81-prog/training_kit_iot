@@ -113,81 +113,169 @@
         </div>
     </section>
 
-    <!-- ================= 3. AREA DAFTAR MISI ================= -->
+    <!-- ================= 3. AREA DAFTAR MISI & SEARCH SENSOR ================= -->
     @php
     $misis = [
         [
             'id' => 1,
             'badge' => 'Misi 1',
             'title' => 'Buzzer Bunyi',
+            'sensor' => 'Modul Buzzer',
+            'sensor_tag' => 'buzzer',
+            'sensor_icon' => '🔔',
+            'category' => 'aktuator',
             'color' => 'thumb-blue',
-            'desc' => 'Belajar memprogram suara buzzer pertama dan menghubungkannya dengan mikrokontroler IoT!'
+            'desc' => 'Belajar memprogram suara buzzer pertama dan menghubungkannya dengan mikrokontroler IoT!',
+            'keywords' => 'buzzer bunyi modul buzzer pasif aktif speaker alarm nada suara aktuator output'
         ],
         [
             'id' => 2,
             'badge' => 'Misi 2',
             'title' => 'Tombol dan Buzzer',
+            'sensor' => 'Push Button & Buzzer',
+            'sensor_tag' => 'tombol',
+            'sensor_icon' => '🔘',
+            'category' => 'sensor',
             'color' => 'thumb-orange',
-            'desc' => 'Membuat sakelar bel pintar yang berbunyi ketika tombol ditekan anak-anak.'
+            'desc' => 'Membuat sakelar bel pintar yang berbunyi ketika tombol ditekan anak-anak.',
+            'keywords' => 'tombol push button button saklar switch buzzer bel tekan input'
         ],
         [
             'id' => 3,
             'badge' => 'Misi 3',
             'title' => 'Kontrol Relay',
+            'sensor' => 'Modul Relay 1 Channel',
+            'sensor_tag' => 'relay',
+            'sensor_icon' => '⚡',
+            'category' => 'aktuator',
             'color' => 'thumb-coral',
-            'desc' => 'Mengendalikan modul sakelar relay otomatis untuk menyalakan perangkat elektronik.'
+            'desc' => 'Mengendalikan modul sakelar relay otomatis untuk menyalakan perangkat elektronik.',
+            'keywords' => 'kontrol relay modul relay switch saklar listrik otomatis aktuator sakelar'
         ],
         [
             'id' => 4,
             'badge' => 'Misi 4',
             'title' => 'Deteksi Gerak',
+            'sensor' => 'Sensor Gerak PIR',
+            'sensor_tag' => 'gerak',
+            'sensor_icon' => '📡',
+            'category' => 'sensor',
             'color' => 'thumb-blue',
-            'desc' => 'Mendeteksi langkah atau gerakan di sekitar sensor PIR untuk sistem alarm pengaman!'
+            'desc' => 'Mendeteksi langkah atau gerakan di sekitar sensor PIR untuk sistem alarm pengaman!',
+            'keywords' => 'sensor gerak pir motion detector infra merah langkah alarm deteksi sensor'
         ],
         [
             'id' => 5,
             'badge' => 'Misi 5',
             'title' => 'Sensor Miring',
+            'sensor' => 'Sensor Tilt (Kemiringan)',
+            'sensor_tag' => 'miring',
+            'sensor_icon' => '📐',
+            'category' => 'sensor',
             'color' => 'thumb-orange',
-            'desc' => 'Mengenali posisi kemiringan objek otomatis dengan sensor tilt switch.'
+            'desc' => 'Mengenali posisi kemiringan objek otomatis dengan sensor tilt switch.',
+            'keywords' => 'sensor miring tilt switch kemiringan sudut posisi orientasi gravitasi'
         ],
         [
             'id' => 6,
             'badge' => 'Misi 6',
             'title' => 'Sensor Sentuh',
+            'sensor' => 'Sensor Sentuh Kapasitif',
+            'sensor_tag' => 'sentuh',
+            'sensor_icon' => '👆',
+            'category' => 'sensor',
             'color' => 'thumb-coral',
-            'desc' => 'Mendeteksi sentuhan jari pintar untuk sakelar modern futuristik.'
+            'desc' => 'Mendeteksi sentuhan jari pintar untuk sakelar modern futuristik.',
+            'keywords' => 'sensor sentuh touch capacitive sentuhan jari saklar pintar switch'
         ],
         [
             'id' => 7,
             'badge' => 'Misi 7',
             'title' => 'Motor Getar',
+            'sensor' => 'Modul Motor Getar',
+            'sensor_tag' => 'getar',
+            'sensor_icon' => '📳',
+            'category' => 'aktuator',
             'color' => 'thumb-blue',
-            'desc' => 'Mencoba aktuator motor getar untuk memberikan efek getar seperti ponsel pintar!'
+            'desc' => 'Mencoba aktuator motor getar untuk memberikan efek getar seperti ponsel pintar!',
+            'keywords' => 'motor getar vibration haptic aktuator dinamo getaran ponsel vibrasi output'
         ],
         [
             'id' => 8,
             'badge' => 'Misi 8',
             'title' => 'LED Berkedip',
+            'sensor' => 'Lampu LED & Resistor',
+            'sensor_tag' => 'led',
+            'sensor_icon' => '💡',
+            'category' => 'aktuator',
             'color' => 'thumb-orange',
-            'desc' => 'Membuat kode Scratch untuk menyalakan dan mematikan lampu LED dengan interval waktu.'
+            'desc' => 'Membuat kode Scratch untuk menyalakan dan mematikan lampu LED dengan interval waktu.',
+            'keywords' => 'lampu led berkedip blink resistor cahaya warna kelap kelip output'
         ],
         [
             'id' => 9,
             'badge' => 'Misi 9',
             'title' => 'Sensor Suara',
+            'sensor' => 'Sensor Suara Mikrofon',
+            'sensor_tag' => 'suara',
+            'sensor_icon' => '🔊',
+            'category' => 'sensor',
             'color' => 'thumb-coral',
-            'desc' => 'Mendeteksi tepuk tangan atau suara keras di ruangan dengan mikrofon sensor suara!'
+            'desc' => 'Mendeteksi tepuk tangan atau suara keras di ruangan dengan mikrofon sensor suara!',
+            'keywords' => 'sensor suara mic microphone mikrofon sound desibel bising tepuk tangan'
         ],
     ];
     @endphp
 
     <main class="praktik-main">
         <div class="praktik-container">
+
+            <!-- ================= KOTAK PENCARIAN SENSOR ================= -->
+            <section class="praktik-search-card" aria-label="Pencarian Sensor Praktik">
+                <!-- Search Input Bar -->
+                <div class="praktik-search-wrapper">
+                    <span class="praktik-search-icon-left" aria-hidden="true">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </span>
+                    <input type="text"
+                        id="praktikSearchInput"
+                        class="praktik-search-input"
+                        placeholder="Cari sensor atau modul praktik (contoh: PIR, Suara, Sentuh, Buzzer, LED)..."
+                        aria-label="Cari sensor atau misi praktik"
+                        autocomplete="off">
+                    <button type="button" id="praktikSearchClearBtn" class="praktik-search-clear-btn" aria-label="Hapus kata kunci pencarian" title="Hapus pencarian">
+                        ✕
+                    </button>
+                </div>
+
+                <!-- Status Hasil Pencarian (Muncul saat ada pencarian) -->
+                <div class="praktik-search-status-bar d-none" id="praktikSearchStatus">
+                    <div class="praktik-search-status-text">
+                        Menampilkan <strong id="countVisibleMisi">9</strong> dari 9 misi praktik
+                    </div>
+                    <button type="button" id="resetFilterBtn" class="praktik-reset-link border-0 bg-transparent p-0" onclick="resetAllPraktikFilters()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+                        </svg>
+                        Reset Pencarian
+                    </button>
+                </div>
+            </section>
+
+            <!-- ================= DAFTAR KARTU MISI ================= -->
             <div class="praktik-grid" role="region" aria-label="Katalog 9 Misi Praktik IoT Kids">
                 @foreach($misis as $misi)
                 <div class="praktik-card" onclick="openMisiModal({{ json_encode($misi) }})" role="button" tabindex="0"
-                    aria-label="{{ $misi['badge'] }}: {{ $misi['title'] }}">
+                    aria-label="{{ $misi['badge'] }}: {{ $misi['title'] }} - {{ $misi['sensor'] }}"
+                    data-id="{{ $misi['id'] }}"
+                    data-title="{{ strtolower($misi['title']) }}"
+                    data-sensor="{{ strtolower($misi['sensor']) }}"
+                    data-sensor-tag="{{ strtolower($misi['sensor_tag']) }}"
+                    data-category="{{ $misi['category'] }}"
+                    data-keywords="{{ strtolower($misi['keywords']) }} {{ strtolower($misi['desc']) }}">
                     <!-- Thumbnail Box -->
                     <div class="praktik-card-thumb {{ $misi['color'] }}">
                         <span class="praktik-badge-misi">{{ $misi['badge'] }}</span>
@@ -199,10 +287,19 @@
                             </svg>
                         </div>
                     </div>
+
+                    <!-- Sensor Badge Pill -->
+                    <div class="praktik-card-sensor-pill" title="Sensor: {{ $misi['sensor'] }}">
+                        <span class="sensor-icon">{{ $misi['sensor_icon'] }}</span>
+                        <span>{{ $misi['sensor'] }}</span>
+                    </div>
+
                     <!-- Judul Misi -->
                     <div class="praktik-card-title">{{ $misi['title'] }}</div>
+
                     <!-- Deskripsi Singkat Misi -->
                     <div class="praktik-card-desc">{{ $misi['desc'] }}</div>
+
                     <!-- Action Footer -->
                     <div class="praktik-card-footer">
                         <span class="praktik-btn-buka">Mulai Misi 🚀</span>
@@ -215,6 +312,19 @@
                     </div>
                 </div>
                 @endforeach
+
+                <!-- State Saat Pencarian Tidak Ditemukan -->
+                <div id="praktikEmptyState" class="praktik-empty-state" style="display: none;">
+                    <div class="praktik-empty-icon" aria-hidden="true">🔍🤖</div>
+                    <h3 class="praktik-empty-title">Sensor Tidak Ditemukan</h3>
+                    <p class="praktik-empty-desc">
+                        Tidak ada misi atau sensor yang cocok dengan pencarian "<strong id="emptyQueryHighlight"></strong>".
+                        Yuk coba cari dengan kata kunci lain seperti <em>Gerak, PIR, Suara, Sentuh, Tombol, Buzzer, atau LED</em>!
+                    </p>
+                    <button type="button" class="praktik-empty-btn" onclick="resetAllPraktikFilters()">
+                        Tampilkan Semua Sensor & Misi 🚀
+                    </button>
+                </div>
             </div>
         </div>
     </main>
@@ -285,6 +395,7 @@
                         <p class="mb-3 text-secondary" id="misiModalDesc" style="font-size: 14.5px;"></p>
                         
                         <div class="d-flex flex-wrap gap-2 pt-2 border-top">
+                            <span class="badge bg-white text-dark border px-3 py-2 rounded-pill shadow-sm" id="misiModalSensor">🔌 Sensor</span>
                             <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">🧩 Scratch Block</span>
                             <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">⚡ Kit CrowPi</span>
                             <span class="badge bg-light text-dark border px-3 py-2 rounded-pill">🤖 IoT Kids</span>
@@ -336,9 +447,136 @@
             document.getElementById('misiModalDesc').textContent = misi.desc;
             document.getElementById('misiDetailBtn').href = "{{ url('/praktik') }}/" + misi.id;
 
+            const sensorEl = document.getElementById('misiModalSensor');
+            if (sensorEl) {
+                sensorEl.textContent = (misi.sensor_icon ? misi.sensor_icon + ' ' : '🔌 ') + (misi.sensor || 'Komponen IoT');
+            }
+
             const modal = new bootstrap.Modal(document.getElementById('misiModal'));
             modal.show();
         }
+
+        /* ================= SENSOR SEARCH LOGIC ================= */
+        document.addEventListener('DOMContentLoaded', function () {
+            const searchInput = document.getElementById('praktikSearchInput');
+            const searchClearBtn = document.getElementById('praktikSearchClearBtn');
+            const searchStatusBar = document.getElementById('praktikSearchStatus');
+            const countVisibleEl = document.getElementById('countVisibleMisi');
+            const emptyStateEl = document.getElementById('praktikEmptyState');
+            const emptyQueryHighlight = document.getElementById('emptyQueryHighlight');
+            const heroBadge = document.querySelector('.praktik-hero-badge');
+            const cards = Array.from(document.querySelectorAll('.praktik-grid .praktik-card'));
+
+            function applyPraktikSearch() {
+                const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
+
+                // Toggle Clear Button and Status Bar
+                if (searchClearBtn) {
+                    if (query.length > 0) {
+                        searchClearBtn.classList.add('is-active');
+                    } else {
+                        searchClearBtn.classList.remove('is-active');
+                    }
+                }
+
+                if (searchStatusBar) {
+                    if (query.length > 0) {
+                        searchStatusBar.classList.remove('d-none');
+                    } else {
+                        searchStatusBar.classList.add('d-none');
+                    }
+                }
+
+                let visibleCount = 0;
+
+                cards.forEach(card => {
+                    const title = (card.getAttribute('data-title') || '').toLowerCase();
+                    const sensor = (card.getAttribute('data-sensor') || '').toLowerCase();
+                    const sensorTag = (card.getAttribute('data-sensor-tag') || '').toLowerCase();
+                    const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
+
+                    const combinedText = `${title} ${sensor} ${sensorTag} ${keywords}`;
+
+                    // Match search query
+                    const matchQuery = !query || combinedText.includes(query);
+
+                    if (matchQuery) {
+                        card.classList.remove('praktik-card-hidden');
+                        visibleCount++;
+                    } else {
+                        card.classList.add('praktik-card-hidden');
+                    }
+                });
+
+                // Update Visible Count
+                if (countVisibleEl) {
+                    countVisibleEl.textContent = visibleCount;
+                }
+                if (heroBadge) {
+                    heroBadge.textContent = `${visibleCount} misi`;
+                }
+
+                // Empty state handling
+                if (emptyStateEl) {
+                    if (visibleCount === 0) {
+                        emptyStateEl.style.display = 'block';
+                        if (emptyQueryHighlight) {
+                            emptyQueryHighlight.textContent = query;
+                        }
+                    } else {
+                        emptyStateEl.style.display = 'none';
+                    }
+                }
+            }
+
+            // Real-time typing dengan validasi
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const val = searchInput.value;
+
+                    // Validasi: hanya huruf dan angka
+                    if (/[^a-zA-Z0-9 ]/.test(val)) {
+                        showToast('⚠️ Pencarian hanya boleh menggunakan huruf dan angka!', '⚠️');
+                        // Hapus karakter yang tidak valid
+                        searchInput.value = val.replace(/[^a-zA-Z0-9 ]/g, '');
+                    }
+
+                    // Validasi: maksimal 30 karakter
+                    if (searchInput.value.length > 30) {
+                        showToast('⚠️ Pencarian maksimal 30 karakter!', '⚠️');
+                        searchInput.value = searchInput.value.slice(0, 30);
+                    }
+
+                    applyPraktikSearch();
+                });
+                searchInput.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        searchInput.value = '';
+                        applyPraktikSearch();
+                    }
+                });
+            }
+
+            // Clear button
+            if (searchClearBtn) {
+                searchClearBtn.addEventListener('click', function() {
+                    if (searchInput) {
+                        searchInput.value = '';
+                        searchInput.focus();
+                    }
+                    applyPraktikSearch();
+                });
+            }
+
+            window.resetAllPraktikFilters = function () {
+                if (searchInput) {
+                    searchInput.value = '';
+                    searchInput.focus();
+                }
+                applyPraktikSearch();
+                showToast('Pencarian direset ke semua misi ✨');
+            };
+        });
     </script>
 </body>
 

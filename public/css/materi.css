@@ -24,14 +24,83 @@
 .materi-card h2{font-family:'Fredoka',sans-serif;font-weight:900;font-size:28px;line-height:1.1;margin:18px 6px 4px}
 .c-blue{background:var(--blue-soft)} .c-orange{background:var(--orange)} .c-red{background:var(--red)}
 
-@media (max-width:900px){
-  .materi-grid{grid-template-columns:repeat(2,1fr)}
-  .materi-banner h1{font-size:64px}
+@media (min-width: 601px) and (max-width: 991px) {
+  .materi-banner {
+    height: 190px;
+  }
+  .materi-banner h1 {
+    font-size: 56px;
+  }
+  .materi-banner .mascot {
+    width: 105px;
+  }
+  .materi-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .materi-main {
+    padding: 36px 0 60px;
+  }
+  .materi-card h2 {
+    font-size: 24px;
+  }
 }
-@media (max-width:600px){
-  .materi-grid{grid-template-columns:1fr}
-  .materi-banner{height:auto;padding:36px 0}
-  .materi-banner .mascot{width:90px}
-  .materi-banner h1{font-size:52px}
+
+@media (max-width: 600px) {
+  .materi-banner {
+    height: auto;
+    padding: 24px 0;
+  }
+  .materi-banner h1 {
+    font-size: 38px;
+    margin-bottom: 8px;
+  }
+  .materi-pill {
+    font-size: 13.5px;
+    padding: 4px 14px;
+  }
+  .materi-banner .mascot {
+    width: 75px;
+  }
+  .materi-main {
+    padding: 24px 0 60px;
+  }
+  .materi-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .materi-card {
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding: 16px 16px 14px;
+    border-radius: 20px;
+  }
+  .materi-thumb {
+    height: 145px;
+  }
+  .materi-thumb .circle {
+    width: 110px;
+    height: 110px;
+  }
+  .materi-thumb svg {
+    width: 80px;
+    height: 80px;
+  }
+  .materi-card h2 {
+    font-size: 22px;
+    margin: 14px 4px 2px;
+  }
 }
+
+@media (max-width: 380px) {
+  .materi-banner h1 {
+    font-size: 32px;
+  }
+  .materi-card h2 {
+    font-size: 20px;
+  }
+}
+
 @media (prefers-reduced-motion:reduce){.materi-card{transition:none}}
