@@ -36,8 +36,8 @@
                 class="{{ request()->routeIs('beranda') ? 'nav-pill-active' : 'nav-link-iot' }} text-decoration-none">Beranda</a>
             <a href="{{ route('materi') }}"
                 class="{{ request()->routeIs('materi') ? 'nav-pill-active' : 'nav-link-iot' }} text-decoration-none">Materi</a>
-            <a href="" class="nav-link-iot text-decoration-none">Praktik</a>
-            <a href="" class="nav-link-iot text-decoration-none">Kuis</a>
+            <a href="{{ route('praktik') }}"
+                class="{{ request()->routeIs('praktik') ? 'nav-pill-active' : 'nav-link-iot' }} text-decoration-none">Praktik</a>
         </nav>
 
         <!-- Mobile Toggle Button -->
@@ -56,7 +56,6 @@
                 style="width:max-content;">Beranda</a>
             <a href="" class="nav-link-iot text-decoration-none">Materi</a>
             <a href="" class="nav-link-iot text-decoration-none">Praktik</a>
-            <a href="" class="nav-link-iot text-decoration-none">Kuis</a>
         </div>
     </div>
 </header>
