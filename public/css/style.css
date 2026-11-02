@@ -4,14 +4,14 @@
  */
 
 :root {
-    --c-hero: #3267F5;
-    --c-navy: #29285F;
-    --c-bg: #F3F6FF;
+    --c-hero: #2F6BFF;
+    --c-navy: #272757;
+    --c-bg: #F4F7FF;
     --c-panel: #E6ECFF;
-    --c-orange: #FFBD61;
-    --c-blue-thumb: #8FB1FF;
-    --c-pink-thumb: #FF777D;
-    --c-mint: #63E3B5;
+    --c-orange: #FFC067;
+    --c-blue-thumb: #8DB4FF;
+    --c-pink-thumb: #FF7A7A;
+    --c-mint: #6EE7B7;
     --c-white: #FFFFFF;
     --c-border: #D5E0F8;
     --ff-main: 'Fredoka', ui-rounded, 'Comic Sans MS', sans-serif;

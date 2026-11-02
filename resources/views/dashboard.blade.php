@@ -23,6 +23,9 @@
 
     <!-- IoT Kids Custom Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <!-- Kartu praktik (sama dengan halaman Praktik) -->
+    <link rel="stylesheet" href="{{ asset('css/materi.css') }}">
 </head>
 
 <body class="d-flex flex-column min-vh-100" id="beranda">
@@ -52,8 +55,8 @@
                         <a href="{{ route('materi') }}" class="btn-hero-orange">
                             Ayo Mulai!
                         </a>
-                        <a href="#praktik" class="btn-hero-white"
-                            onclick="openVideoModal('Misi 1: Buzzer Bunyi', 'Misi 1', 'Belajar merangkai buzzer dan membuat kode suara pertama dengan IoT!')">
+                        {{-- Langsung ke Video Misi 1 di halaman Praktik --}}
+                        <a href="{{ route('praktik') }}#misi-1" class="btn-hero-white">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="#29285F">
                                 <circle cx="12" cy="12" r="11" fill="#fff" stroke="#29285F" stroke-width="2" />
                                 <polygon points="10,8 16,12 10,16" fill="#29285F" />
@@ -189,6 +192,7 @@
         </div>
     </section>
 
+    <!-- ================= 3. IoT ADA DI SEKITAR KITA ================= -->
     <section class="py-5" id="materi">
         <div class="container">
             <div class="panel-iot-bg">
@@ -210,23 +214,21 @@
                 <!-- Center Header Pill with Orange Slashes -->
                 <div class="text-center mb-4">
                     <div class="panel-pill-header">
-                        <!-- Orange slashes on left // -->
                         <span
-                            style="color: #FFBD61; font-weight: 900; font-size: 24px; letter-spacing: -2px;">&#47;&#47;</span>
+                            style="color: #FFBD61; font-weight: 900; font-size: 34px; letter-spacing: -2px;">&#47;&#47;</span>
                         <span class="pill-title">IoT Ada di Sekitar Kita!</span>
-                        <!-- Orange backslashes on right \\ -->
                         <span
-                            style="color: #FFBD61; font-weight: 900; font-size: 24px; letter-spacing: -2px;">&#92;&#92;</span>
+                            style="color: #FFBD61; font-weight: 900; font-size: 34px; letter-spacing: -2px;">&#92;&#92;</span>
                     </div>
                 </div>
 
                 <!-- Main Grid: Robot Mascot on Left + 3 Example Cards on Right -->
                 <div class="row align-items-center g-4">
 
-                    <!-- Left: Robot with Antenna & Extended Sensor Stick -->
+                    <!-- Left: Robot with Antenna & Extended Sensor Stick (diperbesar) -->
                     <div class="col-lg-4 d-flex justify-content-center justify-content-lg-start ps-lg-4">
-                        <div class="animate-float position-relative" style="max-width: 280px; width: 100%;">
-                            <svg width="270" height="150" viewBox="0 0 270 150" fill="none"
+                        <div class="animate-float position-relative" style="max-width: 400px; width: 100%;">
+                            <svg width="100%" height="auto" viewBox="0 0 270 150" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <!-- WiFi/Radar Arcs on Head -->
                                 <path class="animate-arc-outer" d="M 68 18 A 24 24 0 0 1 112 18" stroke="#FFBD61"
@@ -272,22 +274,18 @@
                                 <div class="card-iot-example"
                                     onclick="showToast('💡 Lampu Otomatis: Menyala sendiri saat mendeteksi gerakan!')">
                                     <div class="py-2 d-flex align-items-center justify-content-center"
-                                        style="height: 110px;">
+                                        style="height: 170px;">
                                         <!-- Hanging Lamp Illustration -->
-                                        <svg width="90" height="90" viewBox="0 0 100 100" fill="none"
+                                        <svg width="150" height="150" viewBox="0 0 100 100" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
-                                            <!-- Ceiling mount & cord -->
                                             <rect x="44" y="4" width="12" height="6" rx="2" fill="#29285F" />
                                             <line x1="50" y1="10" x2="50" y2="28" stroke="#29285F" stroke-width="3" />
-                                            <!-- Lamp Shade -->
                                             <path d="M 32 44 L 46 28 L 54 28 L 68 44 Z" fill="#FFBD61" stroke="#29285F"
                                                 stroke-width="3.5" stroke-linejoin="round" />
                                             <ellipse cx="50" cy="44" rx="18" ry="4" fill="#FFBD61" stroke="#29285F"
                                                 stroke-width="3" />
-                                            <!-- Glowing Bulb underneath -->
                                             <circle cx="50" cy="53" r="8" fill="#fff" stroke="#29285F"
                                                 stroke-width="3" />
-                                            <!-- Sparkle Pluses + + + + -->
                                             <text x="14" y="40" font-family="Fredoka" font-weight="900" font-size="20"
                                                 fill="#FFBD61">+</text>
                                             <text x="76" y="40" font-family="Fredoka" font-weight="900" font-size="20"
@@ -309,13 +307,11 @@
                                 <div class="card-iot-example"
                                     onclick="showToast('🚪 Pintu Otomatis: Membuka saat sensor mendeteksi orang lewat!')">
                                     <div class="py-2 d-flex align-items-center justify-content-center"
-                                        style="height: 110px;">
+                                        style="height: 170px;">
                                         <!-- Automatic Sliding Door Illustration -->
-                                        <svg width="90" height="90" viewBox="0 0 100 100" fill="none"
+                                        <svg width="150" height="150" viewBox="0 0 100 100" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
-                                            <!-- Header Beam -->
                                             <rect x="22" y="24" width="56" height="8" rx="2" fill="#29285F" />
-                                            <!-- Side Sensor vents ≡ -->
                                             <line x1="14" y1="36" x2="20" y2="36" stroke="#29285F" stroke-width="2.5"
                                                 stroke-linecap="round" />
                                             <line x1="14" y1="44" x2="20" y2="44" stroke="#29285F" stroke-width="2.5"
@@ -330,13 +326,10 @@
                                             <line x1="80" y1="52" x2="86" y2="52" stroke="#29285F" stroke-width="2.5"
                                                 stroke-linecap="round" />
 
-                                            <!-- Left Sliding Door Panel -->
                                             <rect x="25" y="32" width="22" height="42" fill="#8FB1FF" stroke="#29285F"
                                                 stroke-width="3" />
-                                            <!-- Right Sliding Door Panel -->
                                             <rect x="53" y="32" width="22" height="42" fill="#8FB1FF" stroke="#29285F"
                                                 stroke-width="3" />
-                                            <!-- Yellow Divider / Frame in center -->
                                             <rect x="47" y="32" width="6" height="42" fill="#FFBD61" stroke="#29285F"
                                                 stroke-width="2.5" />
                                         </svg>
@@ -352,11 +345,10 @@
                                 <div class="card-iot-example"
                                     onclick="showToast('🚨 Alarm Otomatis: Berbunyi nyaring ketika mendeteksi bahaya!')">
                                     <div class="py-2 d-flex align-items-center justify-content-center"
-                                        style="height: 110px;">
+                                        style="height: 170px;">
                                         <!-- Alarm Siren Illustration -->
-                                        <svg width="90" height="90" viewBox="0 0 100 100" fill="none"
+                                        <svg width="150" height="150" viewBox="0 0 100 100" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
-                                            <!-- Top Light Radiating Rays -->
                                             <line x1="50" y1="16" x2="50" y2="22" stroke="#29285F" stroke-width="3"
                                                 stroke-linecap="round" />
                                             <line x1="36" y1="20" x2="40" y2="25" stroke="#29285F" stroke-width="3"
@@ -364,16 +356,13 @@
                                             <line x1="64" y1="20" x2="60" y2="25" stroke="#29285F" stroke-width="3"
                                                 stroke-linecap="round" />
 
-                                            <!-- Sound Vibrations ( ) -->
                                             <path d="M 28 36 Q 22 46 28 56" stroke="#29285F" stroke-width="3.5"
                                                 stroke-linecap="round" fill="none" />
                                             <path d="M 72 36 Q 78 46 72 56" stroke="#29285F" stroke-width="3.5"
                                                 stroke-linecap="round" fill="none" />
 
-                                            <!-- Red Dome Siren -->
                                             <path d="M 36 60 C 36 34 64 34 64 60 Z" fill="#FF777D" stroke="#29285F"
                                                 stroke-width="3.5" />
-                                            <!-- Siren Base -->
                                             <rect x="32" y="60" width="36" height="8" rx="2" fill="#29285F" />
                                         </svg>
                                     </div>
@@ -397,74 +386,101 @@
     <section class="py-4 py-lg-5" id="praktik">
         <div class="container">
 
-            <!-- Section Title Row -->
             <div class="d-flex align-items-center justify-content-between mb-4">
                 <h2 class="mb-0"
-                    style="color: var(--c-navy); font-weight: 900; font-size: 30px; letter-spacing: -0.5px;">
+                    style="color: var(--c-navy); font-weight: 900; font-size: 36px; letter-spacing: -0.5px;">
                     Video Praktik
                 </h2>
-                <a href="javascript:void(0)" class="text-decoration-none fw-bold"
-                    style="color: var(--c-navy); font-size: 16px;" onclick="openSemuaVideoModal()">
-                    Lihat Semua
-                </a>
+                <a href="{{ route('praktik') }}" class="btn-lihat-semua">Lihat Semua</a>
             </div>
 
-            <!-- 3 Video Cards Row -->
-            <div class="row g-4">
+            <div class="materi-grid">
 
-                <!-- Card 1: Misi 1 Buzzer Bunyi -->
-                <div class="col-12 col-md-4">
-                    <div class="video-card card-hover-lift"
-                        onclick="openVideoModal('Misi 1: Buzzer Bunyi', 'Misi 1', 'Belajar memprogram suara buzzer pertama menggunakan sinyal digital IoT!')">
-                        <!-- Thumbnail (Pastel Blue) -->
-                        <div class="video-thumbnail thumb-blue">
-                            <span class="badge-mission">Misi 1</span>
-                            <div class="btn-play-circle play-hover-scale">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="#29285F">
-                                    <polygon points="8,5 19,12 8,19" />
-                                </svg>
-                            </div>
+                <!-- Misi 1: Buzzer Bunyi -->
+                <a class="materi-card praktik-card" href="{{ route('praktik.show', 1) }}">
+                    <div class="materi-thumb c-blue">
+                        <span class="misi-label">Misi 1</span>
+                        <div class="circle">
+                            <svg viewBox="0 0 100 100" fill="none" stroke="#262756" stroke-width="4"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M30 48v28a6 6 0 0 0 6 6h28a6 6 0 0 0 6-6V48z" fill="#4B4E96" />
+                                <ellipse cx="50" cy="48" rx="20" ry="8" fill="#6A6DB8" />
+                                <ellipse cx="50" cy="48" rx="5" ry="2.5" fill="#262756" />
+                                <path d="M42 82v8M58 82v8" />
+                                <path d="M22 38q-8 8 0 16M13 31q-13 15 0 30" stroke="#FFBE65" />
+                                <path d="M78 38q8 8 0 16M87 31q13 15 0 30" stroke="#FFBE65" />
+                                <path d="M50 14v14" stroke="#FF7B7B" />
+                                <path d="M50 14l9 3" stroke="#FF7B7B" />
+                                <circle cx="46" cy="30" r="4" fill="#FF7B7B" />
+                            </svg>
                         </div>
-                        <!-- Title -->
-                        <div class="video-title">Buzzer Bunyi</div>
+                        <span class="mulai-badge">
+                            Mulai Misi
+                            <span class="mulai-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M5 12h14M13 6l6 6-6 6" />
+                                </svg>
+                            </span>
+                        </span>
                     </div>
-                </div>
+                    <h2>Buzzer Bunyi</h2>
+                </a>
 
-                <!-- Card 2: Misi 5 Sensor Miring -->
-                <div class="col-12 col-md-4">
-                    <div class="video-card card-hover-lift"
-                        onclick="openVideoModal('Misi 5: Sensor Miring', 'Misi 5', 'Membuat pendeteksi kemiringan objek otomatis dengan sensor tilt!')">
-                        <!-- Thumbnail (Pastel Orange) -->
-                        <div class="video-thumbnail thumb-orange">
-                            <span class="badge-mission">Misi 2</span>
-                            <div class="btn-play-circle play-hover-scale">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="#29285F">
-                                    <polygon points="8,5 19,12 8,19" />
-                                </svg>
-                            </div>
+                <!-- Misi 5: Sensor Miring -->
+                <a class="materi-card praktik-card" href="{{ route('praktik.show', 5) }}">
+                    <div class="materi-thumb c-orange">
+                        <span class="misi-label">Misi 5</span>
+                        <div class="circle">
+                            <svg viewBox="0 0 100 100" fill="none" stroke="#262756" stroke-width="4"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <g transform="rotate(-20 50 56)">
+                                    <rect x="14" y="42" width="72" height="28" rx="14" fill="#66C4FF" />
+                                    <circle cx="70" cy="56" r="8" fill="#FF7B7B" />
+                                    <path d="M26 52v8" stroke="#fff" opacity=".7" />
+                                </g>
+                                <path d="M22 28q28-16 56 0" stroke="#FFBE65" />
+                                <path d="M70 18l9 9-11 4" stroke="#FFBE65" />
+                                <path d="M28 86h44" />
+                            </svg>
                         </div>
-                        <!-- Title -->
-                        <div class="video-title">Sensor Miring</div>
+                        <span class="mulai-badge">
+                            Mulai Misi
+                            <span class="mulai-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M5 12h14M13 6l6 6-6 6" />
+                                </svg>
+                            </span>
+                        </span>
                     </div>
-                </div>
+                    <h2>Sensor Miring</h2>
+                </a>
 
-                <!-- Card 3: Misi 6 Sensor Sentuh -->
-                <div class="col-12 col-md-4">
-                    <div class="video-card card-hover-lift"
-                        onclick="openVideoModal('Misi 6: Sensor Sentuh', 'Misi 6', 'Mendeteksi sentuhan jari pintar untuk tombol sakelar futuristik!')">
-                        <!-- Thumbnail (Pastel Coral/Pink) -->
-                        <div class="video-thumbnail thumb-pink">
-                            <span class="badge-mission">Misi 3</span>
-                            <div class="btn-play-circle play-hover-scale">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="#29285F">
-                                    <polygon points="8,5 19,12 8,19" />
-                                </svg>
-                            </div>
+                <!-- Misi 6: Sensor Sentuh -->
+                <a class="materi-card praktik-card" href="{{ route('praktik.show', 6) }}">
+                    <div class="materi-thumb c-red">
+                        <span class="misi-label">Misi 6</span>
+                        <div class="circle">
+                            <svg viewBox="0 0 100 100" fill="none" stroke="#262756" stroke-width="4"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="50" cy="66" r="20" fill="#6EE7B7" />
+                                <path d="M38 66a12 12 0 0 1 24 0M43 70a7 7 0 0 1 14 0M48 74a2 2 0 0 1 4 0"
+                                    stroke-width="3" />
+                                <path d="M41 50V22a9 9 0 0 1 18 0v28z" fill="#FFBE65" />
+                                <path d="M46 16v6" stroke="#fff" opacity=".7" />
+                                <path d="M24 42l-8-5M76 42l8-5M22 28h-9M78 28h9" stroke="#FF7B7B" />
+                            </svg>
                         </div>
-                        <!-- Title -->
-                        <div class="video-title">Sensor Sentuh</div>
+                        <span class="mulai-badge">
+                            Mulai Misi
+                            <span class="mulai-icon">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M5 12h14M13 6l6 6-6 6" />
+                                </svg>
+                            </span>
+                        </span>
                     </div>
-                </div>
+                    <h2>Sensor Sentuh</h2>
+                </a>
 
             </div>
 
@@ -474,48 +490,14 @@
     @include('partials.footer')
 
 
-    <!-- modal -->
-    <!-- Video Player Modal -->
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content rounded-4 border-0 shadow-lg" style="border: 3px solid var(--c-navy) !important;">
-                <div class="modal-header border-0 pb-0">
-                    <span class="badge bg-warning text-dark fw-bold px-3 py-2 rounded-pill me-2"
-                        id="modalBadge">Misi</span>
-                    <h5 class="modal-title fw-bold" id="videoModalLabel" style="color: var(--c-navy);">Judul Misi</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center p-4">
-                    <!-- Fake Video Player Area -->
-                    <div class="rounded-4 mb-3 d-flex flex-column align-items-center justify-content-center text-white"
-                        style="height: 220px; background: #29285F; border: 3px solid #3c3b7a;">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="#FFBD61" class="mb-2">
-                            <circle cx="12" cy="12" r="10" fill="#fff" stroke="#FFBD61" stroke-width="2" />
-                            <polygon points="10,8 16,12 10,16" fill="#29285F" />
-                        </svg>
-                        <p class="mb-0 fw-bold fs-5" id="modalPlayerTitle">Memutar Video Praktik...</p>
-                        <small class="text-white-50">Durasi: ~03:45 Menit</small>
-                    </div>
-                    <p class="text-muted fw-bold mb-3" id="modalDescription">Deskripsi misi praktik pembelajaran IoT.
-                    </p>
-                    <button type="button" class="btn btn-hero-orange w-100" data-bs-dismiss="modal">
-                        Selesai Menonton 🎉
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
-
-    <!-- ================= 7. TOAST NOTIFICATION ================= -->
+    <!-- ================= TOAST NOTIFICATION ================= -->
     <div id="toast" class="toast-iot">
         <span id="toast-icon">✨</span>
         <span id="toast-message">Pesan IoT Kids</span>
     </div>
 
 
-    <!-- ================= 8. SCRIPTS ================= -->
+    <!-- ================= SCRIPTS ================= -->
     <!-- Bootstrap 5 Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -528,22 +510,6 @@
             clearTimeout(toastTimer);
             t.classList.add('show');
             toastTimer = setTimeout(() => t.classList.remove('show'), 3200);
-        }
-
-        // Video Modal Opener
-        function openVideoModal(title, badge, description) {
-            document.getElementById('videoModalLabel').textContent = title;
-            document.getElementById('modalBadge').textContent = badge;
-            document.getElementById('modalPlayerTitle').textContent = title;
-            document.getElementById('modalDescription').textContent = description;
-            const modal = new bootstrap.Modal(document.getElementById('videoModal'));
-            modal.show();
-        }
-
-        // Lihat Semua Videos Modal Trigger
-        function openSemuaVideoModal() {
-            showToast('📚 Menampilkan 6 Misi Video Praktik IoT!');
-            openVideoModal('Katalog Semua Video Praktik', 'Semua Misi', 'Misi 1: Buzzer Bunyi, Misi 2: LED Berkedip, Misi 3: Servo Gerak, Misi 4: Sensor Cahaya, Misi 5: Sensor Miring, Misi 6: Sensor Sentuh');
         }
     </script>
 </body>

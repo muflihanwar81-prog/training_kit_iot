@@ -35,3 +35,321 @@
   .materi-banner h1{font-size:52px}
 }
 @media (prefers-reduced-motion:reduce){.materi-card{transition:none}}
+
+/* ================= PRAKTIK (daftar kartu) ================= */
+.praktik-card .materi-thumb {
+    position: relative;
+}
+
+.praktik-card .misi-label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    background: #fff;
+    color: #262756;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: .8rem;
+    line-height: 1;
+    padding: 6px 12px;
+    border-radius: 999px;
+}
+
+/* ilustrasi mengisi lingkaran putih */
+.praktik-card .circle svg {
+    width: 82%;
+    height: 82%;
+}
+
+/* tombol "Mulai Misi" di pojok kanan bawah */
+.praktik-card .mulai-badge {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 6px 5px 14px;
+    background: #fff;
+    color: #262756;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 1;
+    border: 3px solid #262756;
+    border-radius: 999px;
+    box-shadow: 0 4px 0 #262756;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.praktik-card .mulai-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #FFBE65;
+    display: grid;
+    place-items: center;
+}
+.praktik-card .mulai-icon svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: #262756;
+    stroke-width: 3.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.praktik-card:hover .mulai-badge,
+.praktik-card:focus-visible .mulai-badge {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #262756;
+}
+
+/* ================= BERANDA: IoT Ada di Sekitar Kita (versi diperbesar) ================= */
+#materi .panel-iot-bg {
+    padding: 56px 44px 52px;
+    border-radius: 40px;
+}
+#materi .panel-pill-header {
+    gap: 18px;
+    padding: 12px 44px;
+    box-shadow: 0 6px 0 #c9d4f5;
+}
+#materi .panel-pill-header .pill-title {
+    font-size: 38px;
+    letter-spacing: -0.5px;
+}
+#materi .panel-pill-header .slash {
+    color: #FFBD61;
+    font-weight: 900;
+    font-size: 46px;
+    letter-spacing: -3px;
+    line-height: 1;
+}
+
+#materi .card-iot-example {
+    padding: 22px 18px 24px;
+    border-radius: 28px;
+    gap: 18px;
+    justify-content: flex-start;
+}
+#materi .iot-ilustrasi {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 230px;
+    border-radius: 22px;
+    background: var(--bg);
+}
+#materi .iot-ilustrasi svg {
+    width: 190px;
+    height: 190px;
+    overflow: visible;
+}
+#materi .card-iot-label {
+    max-width: none;
+    padding: 10px 24px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 1.2;
+    border-width: 3px;
+    box-shadow: 0 4px 0 #29285F;
+}
+
+@media (max-width: 991px) {
+    #materi .panel-iot-bg { padding: 36px 20px; border-radius: 30px; }
+    #materi .panel-pill-header { padding: 8px 22px; }
+    #materi .panel-pill-header .pill-title { font-size: 24px; }
+    #materi .panel-pill-header .slash { font-size: 30px; }
+    #materi .iot-ilustrasi { height: 200px; }
+}
+
+/* ================= MATERI (halaman detail) ================= */
+#materi-detail-page .materi-banner h1 { font-size: 52px; margin-bottom: 14px; }
+#materi-detail-page .materi-pill { max-width: 100%; font-size: 15px; }
+
+.materi-teks { color: var(--navy); font-size: 1.05rem; line-height: 1.7; margin: 0 0 10px; }
+.materi-teks strong { color: #1d4fd8; }
+
+.materi-daftar { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 8px; }
+.materi-daftar li {
+    background: #F4F7FF;
+    border: 2px solid var(--line);
+    border-radius: 14px;
+    padding: 10px 14px;
+    color: var(--navy);
+    line-height: 1.5;
+}
+
+.materi-gambar { margin: 18px 0 0; text-align: center; }
+.materi-gambar img {
+    max-width: 100%;
+    max-height: 380px;
+    border-radius: 16px;
+    border: 2px solid var(--line);
+    background: #fff;
+}
+.materi-gambar figcaption { margin-top: 8px; font-size: .9rem; color: #6A6DB8; font-weight: 700; }
+
+.misi-box.materi-fakta { background: #FFF6E3; border-color: var(--orange); }
+
+/* Kuis */
+.kuis-item { margin-bottom: 18px; }
+.kuis-tanya { font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+.kuis-opsi { display: flex; flex-wrap: wrap; gap: 10px; }
+.kuis-btn {
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--navy);
+    border: 3px solid var(--navy);
+    box-shadow: 0 3px 0 var(--navy);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.kuis-btn:hover { transform: translateY(2px); box-shadow: 0 1px 0 var(--navy); }
+.kuis-btn.betul { background: #6EE7B7; }
+.kuis-btn.salah { background: #FF777D; color: #fff; }
+.kuis-hasil { min-height: 1.4em; margin: 8px 0 0; font-weight: 800; }
+.kuis-hasil.ok { color: #0a8f66; }
+.kuis-hasil.no { color: #c0392b; }
+
+@media (max-width: 600px) {
+    #materi-detail-page .materi-banner h1 { font-size: 36px; }
+}
+
+/* ================= PRAKTIK (halaman detail misi) ================= */
+#praktik-detail-page .materi-banner h1 { font-size: 52px; margin-bottom: 14px; }
+#praktik-detail-page .materi-pill { max-width: 100%; font-size: 15px; }
+
+.kembali-link {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #fff;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 800;
+    text-decoration: none;
+    opacity: .9;
+}
+.kembali-link:hover { opacity: 1; text-decoration: underline; color: #fff; }
+
+.misi-detail { max-width: 860px; display: grid; gap: 20px; }
+
+.misi-box {
+    background: #fff;
+    border: 2px solid var(--line);
+    border-radius: 24px;
+    padding: 22px 24px;
+}
+.misi-box h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 14px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 900;
+    font-size: 1.35rem;
+    color: var(--navy);
+}
+.step-no {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--orange);
+    border: 2px solid var(--navy);
+    color: var(--navy);
+    font-size: 1rem;
+}
+
+.misi-video { border-radius: 16px; overflow: hidden; }
+.misi-video-kosong {
+    display: grid;
+    place-items: center;
+    min-height: 220px;
+    background: #F1F4FF;
+    color: #6A6DB8;
+    font-weight: 800;
+    border: 2px dashed #B9C4F2;
+    border-radius: 16px;
+}
+
+.info-list { list-style: none; padding: 0; margin: 0 0 14px; display: grid; gap: 6px; color: var(--navy); }
+.switch-note {
+    background: #FFF6E3;
+    border: 2px solid var(--orange);
+    border-radius: 14px;
+    padding: 12px 16px;
+    color: var(--navy);
+}
+.switch-note ul { margin: 6px 0 0; padding-left: 20px; }
+.misi-hint { color: #4B4E96; margin-bottom: 14px; }
+
+/* Blok ala Scratch */
+.blok-stack { display: grid; gap: 4px; justify-items: start; }
+.blok {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 16px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 800;
+    font-size: .95rem;
+    box-shadow: inset 0 -3px 0 rgba(0,0,0,.15);
+}
+.blok-no {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.3);
+    font-size: .75rem;
+}
+.blok-event   { background: #FFBF00; color: var(--navy); border-radius: 22px 22px 10px 10px; }
+.blok-var     { background: #FF8C1A; }
+.blok-gpio    { background: #0FBD8C; }
+.blok-control { background: #FFAB19; }
+.blok-looks   { background: #9966FF; }
+.blok-motion  { background: #4C97FF; }
+
+.blok-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.blok-legend span {
+    padding: 3px 12px;
+    border-radius: 999px;
+    color: #fff;
+    font-size: .75rem;
+    font-weight: 800;
+}
+.blok-legend .blok-event { color: var(--navy); border-radius: 999px; }
+
+.misi-hasil p { margin: 0 0 6px; color: var(--navy); font-weight: 700; }
+.misi-hasil .misi-tips { color: #4B4E96; font-weight: 600; }
+
+.misi-nav { display: flex; justify-content: space-between; gap: 12px; }
+.btn-nav {
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: #fff;
+    color: var(--navy);
+    text-decoration: none;
+    border: 3px solid var(--navy);
+    box-shadow: 0 4px 0 var(--navy);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 800;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-nav-next { background: var(--orange); }
+.btn-nav:hover { transform: translateY(3px); box-shadow: 0 1px 0 var(--navy); color: var(--navy); }
+
+@media (max-width: 600px) {
+    #praktik-detail-page .materi-banner h1 { font-size: 36px; }
+    .misi-box { padding: 18px 16px; }
+    .blok { font-size: .85rem; }
+}
